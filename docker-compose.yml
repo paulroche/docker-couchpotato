@@ -1,0 +1,14 @@
+---
+version: '2'
+services:
+  couchpotato:
+    env_file: vars
+    build: .
+    image: 'paulroche/couchpotato'
+    container_name: couchpotato
+    cpuset: "0"
+    restart: always
+    ports:
+      - "5050:5050"
+    volumes:
+      - '/data/couchpotato:/data/couchpotato'
